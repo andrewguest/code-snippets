@@ -1,0 +1,73 @@
+{
+  "b4298": {
+    "servers": [
+      "cphyprapp16",
+      "cphyprapp17",
+      "cphyprapp18",
+      "cphyprapp19",
+      "cphyprapp20",
+      "cphyprapp21"
+    ]
+  },
+  "c4298": {
+    "servers": [
+      "cphyprapp5"
+    ]
+  },
+  "m4298": {
+    "servers": [
+      "cphyprapp15"
+    ]
+  },
+  "p4298": {
+    "servers": [
+      "cphyprapp1",
+      "cphyprapp2",
+      "cphyprapp3",
+      "cphyprapp4",
+      "cphyprapp11",
+      "cphyprapp12"
+    ]
+  },
+  "b4298b": {
+    "servers": [
+      "cphybprapp5"
+    ]
+  },
+  "c4298b": {
+    "servers": [
+      "cphybprapp5"
+    ]
+  },
+  "t4298b": {
+    "servers": [
+      "cphyprapp6"
+    ]
+  },
+  "p4298b": {
+    "servers": [
+      "cphybprapp1",
+      "cphybprapp2",
+      "cphybprapp3",
+      "cphybprapp4"
+    ]
+  },
+  "b4300": {
+    "servers": [
+      "cphycprapp5"
+    ]
+  },
+  "c4300": {
+    "servers": [
+      "cphycprapp5"
+    ]
+  },
+  "p4300": {
+    "servers": [
+      "cphycprapp1",
+      "cphycprapp2",
+      "cphycprapp3",
+      "cphycprapp4"
+    ]
+  }
+}

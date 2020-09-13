@@ -1,0 +1,21 @@
+# A list of fruits
+fruits:
+    - Apple
+    - Orange
+    - Grape
+    - Banana
+
+# A dictionary
+Bob:
+    name: Bob Smith
+    job: Senior Developer
+    skills: Elite
+
+# A more complicate structure
+James:
+    name: James Doodle
+    job: Senior Developer
+    skills:
+        - python
+        - java
+        - ruby
