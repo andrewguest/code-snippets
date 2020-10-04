@@ -19,10 +19,8 @@ with zipfile.ZipFile(backup_date + '.zip', "w", zipfile.ZIP_DEFLATED) as zf:
             name = os.path.join(root, name)
             name = os.path.normpath(name)
             zf.write(name, name)
-            
-            
-            
-            
+
+
  '''
  Example of how the script works.
  Directory structure:
