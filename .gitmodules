@@ -1,0 +1,3 @@
+[submodule "css/30-seconds-of-css"]
+	path = css/30-seconds-of-css
+	url = https://github.com/30-seconds/30-seconds-of-css.git
