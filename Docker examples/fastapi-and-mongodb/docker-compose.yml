@@ -1,0 +1,24 @@
+version: "3"
+
+# define services (containers)
+services:
+  this_microservice_api:
+    build:
+      context: "."
+    image: this_microservice_api
+    command: gunicorn app.this_microservice_api:api --bind 0.0.0.0:5000 -w 1 -k uvicorn.workers.UvicornWorker
+    ports:
+      # host:container
+      - "5050:5000"
+    restart: always
+    depends_on:
+      - this_microservice_db
+    container_name: "this_microservice_api"
+
+  this_microservice_db:
+    image: mongo
+    volumes:
+      # Host:Container
+      - /tmp:/data/db
+    container_name: "this_microservice_db"
+    restart: always
