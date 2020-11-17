@@ -8,7 +8,7 @@ COPY . /app
 # install app dependencies
 RUN yarn add package.json
 
-# compile React app
+# compile your Vue or React app
 RUN yarn run build
 
 # prepare nginx
