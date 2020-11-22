@@ -11,6 +11,7 @@ from paramiko.ssh_exception import AuthenticationException
         from fabric_ssh import RemoteClient
         myconnection = RemoteClient('myServername', 'myUsername', '/home/andrew/.ssh/id_rsa')
         myconnection.execute_commands(['hostname', 'uptime', 'whoami'])
+        myconnection.read_file('/root/somefile.txt')
 
 """
 
@@ -18,7 +19,15 @@ from paramiko.ssh_exception import AuthenticationException
 class RemoteClient:
     """ Client to interact with a remote host via SSH """
 
-    def __init__(self, host, user, ssh_key_filepath) -> None:
+    def __init__(self, host: str, user: str, ssh_key_filepath: str) -> None:
+    	"""Connect to a remote server
+
+        Args:
+            host (str): The IP or hostname of the server to connect to.
+            user (str): The user to connect to the remote server as.
+            ssh_key_filepath (str): Path to an SSH private key to use authenticate to the remote server.
+        """
+    
         self.host = host
         self.user = user
         self.ssh_key_filepath = ssh_key_filepath
@@ -78,3 +87,4 @@ class RemoteClient:
             with sftp.open(file_to_read) as file:
                 for line in file:
                     print(line)
+
