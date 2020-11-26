@@ -1,0 +1,33 @@
+# Example of a docker-compose.yml file with separate frontend, backend, and database containers
+
+version: "3"
+
+services:
+  frontend:
+    build:
+      context: <path to your frontend folder with a Dockerfile>
+    image: <name of frontend image>:<frontend image tag>
+    ports:
+      # host:container
+      - "<host port to listen on>:80"
+    restart: always
+
+  backend:
+    build:
+      context: <path to your backend folder with a Dockerfile>
+    image: <name of backend image>:<backend image tag>
+    # This assumes your docker-compose.yml file is in a directory with an 'app/' directory and
+    #   that a backend.py (app.backend) file exists in that directory. It also assumes the
+    #   variable storing your app instance is named 'api' (api = FastAPI()  or  api = Flask() )
+    command: gunicorn app.backend:api --bind 0.0.0.0:5000 -k uvicorn.workers.UvicornWorker -w 1
+    ports:
+      - "<host port to listen on>:<port exposed in Dockerfile>"
+    restart: always
+    depends_on:
+      - database
+
+  database:
+    image: mongo
+    volumes:
+      - <local path to store db data>:/data/db
+    restart: always

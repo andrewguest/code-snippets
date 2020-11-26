@@ -1,3 +1,6 @@
+###############
+# React image #
+###############
 FROM node:current-alpine as build
 
 WORKDIR /app
@@ -8,10 +11,12 @@ COPY . /app
 # install app dependencies
 RUN yarn add package.json
 
-# compile your Vue or React app
+# compile the React app
 RUN yarn run build
 
-# prepare nginx
+###############
+# Nginx image #
+###############
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
