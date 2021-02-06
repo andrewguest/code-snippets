@@ -38,10 +38,9 @@ def hello(name: str = 'Class!'):
 
 hello()
 print(f'Function name: {hello.__name__}')
-
+#----------------------------------------
 
 print('-' * 15)
-#----------------------------------------
 
 #****************************************
 # FUNCTION decorator example
