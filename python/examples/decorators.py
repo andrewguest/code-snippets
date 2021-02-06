@@ -10,7 +10,7 @@ For example:
 
 import functools
 
-
+#----------------------------------------
 # CLASS decorator example
 class ClassDecorator():
     # setup code could go here
@@ -41,8 +41,9 @@ print(f'Function name: {hello.__name__}')
 
 
 print('-' * 15)
+#----------------------------------------
 
-
+#****************************************
 # FUNCTION decorator example
 def FunctionDecorator(wrappedFunc):
     # if you remove this, then the __name__ of hello1() will change from
@@ -62,3 +63,4 @@ def hello1(name: str = 'Functions!'):
 
 hello1()
 print(f'Function name: {hello1.__name__}')
+#****************************************
